@@ -1,10 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { colors } from './src/theme/colors';
+import { spacing } from './src/theme/spacing';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Hello Planet app!</Text>
+      <Text style={{ marginTop: spacing[8] }}>Hello Planet app!</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -12,9 +15,10 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 2,
+    color: colors.red,
+    backgroundColor: colors.orange,
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 });
