@@ -15,7 +15,7 @@ export default function PlanetHeader({ backBtn, title = "THE PLANETS" }) {
           <Pressable style={{ marginRight: spacing[4] }} onPress={() => {
             navigation.goBack();
           }}>
-            <AntDesign name="left" size={24} color="white" />
+            <AntDesign name="left" size={spacing[6]} color={colors.white} />
           </Pressable>
         )
       }
