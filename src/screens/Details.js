@@ -1,9 +1,9 @@
 import React from 'react';
 import Text from '../Components/text/text';
-import PlanetHeader from '../Components/PlanetHeader';
 import { colors } from '../theme/colors';
-import { StyleSheet, ScrollView, View, Pressable } from 'react-native';
 import { spacing } from '../theme/spacing';
+import PlanetHeader from '../Components/PlanetHeader';
+import { StyleSheet, ScrollView, View, Pressable, Linking } from 'react-native';
 import { EarthSvg, JupiterSvg, MarsSvg, MercurySvg, NeptuneSvg, SaturnSvg, UranusSvg, VenusSvg } from '../svg/Index';
 
 const PlanetSection = ({ title, value }) => {
@@ -21,7 +21,7 @@ const PlanetSection = ({ title, value }) => {
 
 export default function Details({ navigation, route }) {
     const planet = route.params.planet;
-    const { name, description, rotationTime, revolutionTime, image, radius, avgTemp } = planet;
+    const { name, description, rotationTime, revolutionTime, image, radius, avgTemp, wikiLink } = planet;
     // console.log("paichi", planet);
 
     // const renderImages = (name) => {
@@ -45,6 +45,10 @@ export default function Details({ navigation, route }) {
     //     }
     // };
 
+    const wikilink = () => {
+        Linking.openURL(wikiLink);
+    }
+
     return (
         <View style={styles.container}>
             <PlanetHeader backBtn={true} />
@@ -57,7 +61,7 @@ export default function Details({ navigation, route }) {
 
                     <Text style={styles.name}>{name}</Text>
                     <Text style={styles.description}>{description}</Text>
-                    <Pressable style={styles.source}>
+                    <Pressable onPress={wikilink} style={styles.source}>
                         <Text>Source{' '}</Text>
                         <Text style={styles.wikiLink}>Wikipedia</Text>
                     </Pressable>
