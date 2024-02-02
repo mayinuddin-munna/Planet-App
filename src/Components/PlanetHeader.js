@@ -1,7 +1,7 @@
-import { View, StyleSheet, Pressable } from 'react-native'
-import React from 'react'
-import Text from './text/text'
-import { spacing } from '../theme/spacing'
+import { View, StyleSheet, Pressable } from 'react-native';
+import React from 'react';
+import Text from './text/text';
+import { spacing } from '../theme/spacing';
 import { AntDesign } from '@expo/vector-icons';
 import { colors } from '../theme/colors';
 import { useNavigation } from '@react-navigation/native';
